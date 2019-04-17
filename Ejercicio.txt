@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>INTRO-1</title>
+
+</head>
+
+<body>
+
+    <script>
+    
+    let t,p,d,tu;
+    t = parseInt(prompt("Ingrese los minutos completos al telefono: "));
+    d = prompt("Ingrese el dia de la llameda(LUN,MAR,MIER,JUE,VIE,SAB,DOM)");
+    tu = prompt("Ingrese el turno correspondiente: (matutino = M ; vespertino = v)");
+    
+    if(t<=5){        
+        p=1;
+    }else if(t<8){
+        p=(t-5)*0.8+5;
+    }else if(t<10){
+        p=(t-8)*0.7 + 7.4;
+    }else{
+        p=(t-10)*0.5;
+    }
+
+    if(d=="DOM"){
+        p=p*0.05;
+    }else if(tu=="M"){
+        p=p*0.15;
+    }else{
+        p=p*0.10;
+    }
+
+    alert(`El valor de la llamada es: ${p}`);
+
+    </script>
+
+</body>
+
+</html>
+
